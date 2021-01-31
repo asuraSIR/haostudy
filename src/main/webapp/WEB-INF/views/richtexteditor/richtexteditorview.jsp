@@ -17,8 +17,8 @@
         <li>商品管理</li>
         <li>订单管理</li>
     </ul>
-    <div class="layui-tab-content" style="height: 100px;">
-        <div class="layui-tab-item layui-show"><iframe src="richtexteditor/jsp/ueditor.do"></iframe></div>
+    <div class="layui-tab-content" style="height: 100%;">
+        <div class="layui-tab-item layui-show"><iframe scrolling="no" id="ueditor" name="ueditor" frameborder="0" src="richtexteditor/jsp/ueditor.do" style="width:100%;height: 100%"></iframe></div>
         <div class="layui-tab-item">内容2</div>
         <div class="layui-tab-item">内容3</div>
         <div class="layui-tab-item">内容4</div>
@@ -26,45 +26,41 @@
     </div>
 </div>
 <script src="/static/layuiadmin/layui/layui.js" charset="utf-8"></script>
+<script src="/static/layuiadmin/layui/lay/modules/jquery.js"></script>
 <script>
-    layui.use('element', function(){
+    layui.use('element', function () {
         var $ = layui.jquery
-            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-
-        //触发事件
-        var active = {
-            tabAdd: function(){
-                //新增一个Tab项
-                element.tabAdd('demo', {
-                    title: '新选项'+ (Math.random()*1000|0) //用于演示
-                    ,content: '内容'+ (Math.random()*1000|0)
-                    ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
-                })
-            }
-            ,tabDelete: function(othis){
-                //删除指定Tab项
-                element.tabDelete('demo', '44'); //删除：“商品管理”
+            , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    });
 
 
-                othis.addClass('layui-btn-disabled');
+    // 计算页面的实际高度，iframe自适应会用到
+    function calcPageHeight(doc) {
+        var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight);
+        var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+        var height = Math.max(cHeight, sHeight);
+        return height;
+    }
+
+
+    function iframeInit(id) {
+        //根据ID获取iframe对象
+        var ifr = document.getElementById(id);
+        ifr.onload = function () {
+            //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
+            ifr.style.height = '0px';
+            var iDoc = ifr.contentDocument || ifr.document;
+            var height = calcPageHeight(iDoc);
+            if (height < 850) {
+                height = 850;
             }
-            ,tabChange: function(){
-                //切换到指定Tab项
-                element.tabChange('demo', '22'); //切换到：用户管理
-            }
+            ifr.style.height = height + 'px';
         };
+    }
 
-        $('.site-demo-active').on('click', function(){
-            var othis = $(this), type = othis.data('type');
-            active[type] ? active[type].call(this, othis) : '';
-        });
 
-        element.tabChange('test', layid);
-
-        element.on('tab(test)', function(elem){
-            location.hash = 'test='+ $(this).attr('lay-id');
-        });
-
+    $(function () {
+        iframeInit('ueditor');
     });
 </script>
 </body>

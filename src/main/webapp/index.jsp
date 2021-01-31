@@ -226,6 +226,24 @@
 
                         </dl>
                     </li>
+                    <li data-name="senior" class="layui-nav-item">
+                        <a href="javascript:;" lay-tips="前端模板" lay-direction="2">
+                            <i class="layui-icon layui-icon-templeate-1"></i>
+                            <cite>前端模板</cite>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="AdminLTETemplate">
+                                <a href="/uitemplate/AdminLTE/index2.html" target="_blank">AdminLTE</a>
+                            </dd>
+                            <dd data-name="layuiAdminTemplate">
+                                <a href="/uitemplate/layuiAdmin/views/index.html" target="_blank">LayuiAdmin</a>
+                            </dd>
+                            <dd data-name="ueditorTemplate">
+                                <a href="/uitemplate/ueditor/index.html" target="_blank">ueditor</a>
+                            </dd>
+
+                        </dl>
+                    </li>
 
                 </ul>
             </div>
