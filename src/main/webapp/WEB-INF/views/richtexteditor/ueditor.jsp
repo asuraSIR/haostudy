@@ -17,7 +17,7 @@
 </head>
 <body>
 <div>
-    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+    <script id="editor" type="text/plain" style="width:100%;height:40%;"></script>
 </div>
 <div id="btns">
     <div>
