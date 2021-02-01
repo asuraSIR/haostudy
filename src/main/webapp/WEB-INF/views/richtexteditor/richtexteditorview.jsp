@@ -18,7 +18,7 @@
         <li>订单管理</li>
     </ul>
     <div class="layui-tab-content" style="height: 100%;">
-        <div class="layui-tab-item layui-show"><iframe scrolling="no" id="ueditor" name="ueditor" frameborder="0" src="richtexteditor/jsp/ueditor.do" style="width:100%;height: 100%"></iframe></div>
+        <div class="layui-tab-item layui-show"><iframe scrolling="no" id="ueditor" name="ueditor" frameborder="0" src="ueditor.do" style="width:100%;height: 100%"></iframe></div>
         <div class="layui-tab-item">内容2</div>
         <div class="layui-tab-item">内容3</div>
         <div class="layui-tab-item">内容4</div>
@@ -33,7 +33,7 @@
             , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
     });
 
-
+/*
     // 计算页面的实际高度，iframe自适应会用到
     function calcPageHeight(doc) {
         var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight);
@@ -62,6 +62,8 @@
     $(function () {
         iframeInit('ueditor');
     });
+
+ */
 </script>
 </body>
 </html>
