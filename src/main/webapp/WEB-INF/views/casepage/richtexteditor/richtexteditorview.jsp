@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/static/layuiadmin/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="/static/layuiadmin/layui/css/layui.css" media="all">
 </head>
 <body>
 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
@@ -18,7 +18,7 @@
         <li>订单管理</li>
     </ul>
     <div class="layui-tab-content" style="height: 100%;">
-        <div class="layui-tab-item layui-show"><iframe scrolling="no" id="ueditor" name="ueditor" frameborder="0" src="ueditor.do" style="width:100%;height: 100%"></iframe></div>
+        <div class="layui-tab-item layui-show"><iframe scrolling="no" id="ueditor" name="ueditor" frameborder="0" src="richtexteditor_ueditor.do" style="width:100%;height: 100%"></iframe></div>
         <div class="layui-tab-item">内容2</div>
         <div class="layui-tab-item">内容3</div>
         <div class="layui-tab-item">内容4</div>

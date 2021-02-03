@@ -1,7 +1,6 @@
-package com.hao.commontool.ControllerUtils;
+package com.hao.commont.base.web;
 
-import com.hao.commontool.returnresources.ReturnResources;
-import com.hao.commontool.utils.GetDate;
+import com.hao.commont.util.date.GetDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,15 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @Description:
- * @Company:
- * @version: 1.0
- * @date 2021/1/21 - 10:01
- */
 @Controller
 public class PathJumpController {
-
     @Autowired
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
     @Autowired
@@ -52,15 +44,8 @@ public class PathJumpController {
         file = file.replace("_", "/");
         System.out.println("in index path module:" + module + " file:" + file);
         dealXss();
-        String path = module + "/" + file;
-        return path;
+        return module + "/" + file;
     }
-
-    /*@RequestMapping(value = "/getLoginInfo")
-    @ResponseBody
-    public Map<String, Object> getLoginInfo(HttpServletRequest request) throws IOException {
-        return ReturnResources.strToJson(true, ControllerUtils.getLoginUser(request));
-    }*/
 
     /**
      * 获得服务器当前时间
@@ -104,7 +89,7 @@ public class PathJumpController {
             }
             urlList.add(hashMap);
         }
-        return ReturnResources.strToJson(true, urlList);
+        return ControllerUtils.dealResult(true, urlList);
     }
 
     // 处理参数, 反射型xss
@@ -137,4 +122,5 @@ public class PathJumpController {
     }
 
     private static String[] XSS_STR = new String[] { "'", ";", "\"", "(", ")", "ALERT", "FUNCTION", ">", "<", "SCRIPT" };
+
 }
