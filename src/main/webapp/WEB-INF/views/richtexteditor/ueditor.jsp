@@ -17,9 +17,9 @@
 </head>
 <body>
 <div>
-    <script id="editor" type="text/plain" style="width:100%;height:40%;"></script>
+    <script id="editor" type="text/plain" style="width:100%;height:50%;"></script>
 </div>
-<div id="btns">
+<div id="btns" style="height: 50%">
     <div>
         <button onclick="getAllHtml()">获得整个html的内容</button>
         <button onclick="getContent()">获得内容</button>

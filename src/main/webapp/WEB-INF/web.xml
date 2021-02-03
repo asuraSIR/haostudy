@@ -37,4 +37,14 @@
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>ueditor</servlet-name>
+    <jsp-file>/WEB-INF/views/richtexteditor/ueditor.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ueditor</servlet-name>
+    <url-pattern>/ueditor</url-pattern>
+  </servlet-mapping>
+
 </web-app>

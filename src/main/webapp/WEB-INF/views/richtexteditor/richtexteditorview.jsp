@@ -33,9 +33,9 @@
             , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
     });
 
-/*
+
     // 计算页面的实际高度，iframe自适应会用到
-    function calcPageHeight(doc) {
+   /* function calcPageHeight(doc) {
         var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight);
         var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
         var height = Math.max(cHeight, sHeight);
@@ -62,8 +62,8 @@
     $(function () {
         iframeInit('ueditor');
     });
+*/
 
- */
 </script>
 </body>
 </html>
