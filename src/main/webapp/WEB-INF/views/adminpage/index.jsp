@@ -18,7 +18,7 @@
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
             <!-- 头部区域 -->
-            <iframe src="forall/jsp/adminpage_top.do" frameborder="0" class="layadmin-iframe"></iframe>
+            <iframe src="/forall/jsp/adminpage_top.do" frameborder="0" class="layadmin-iframe"></iframe>
         </div>
         <!-- 侧边菜单 -->
         <div class="layui-side layui-side-menu">
